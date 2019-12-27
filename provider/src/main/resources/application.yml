@@ -1,0 +1,15 @@
+server:
+  port: 8000
+spring:
+  #项目名字
+  application:
+    name: rabbirmq-provider
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /vhost_admin
+logging:
+  level:
+    root: debug
