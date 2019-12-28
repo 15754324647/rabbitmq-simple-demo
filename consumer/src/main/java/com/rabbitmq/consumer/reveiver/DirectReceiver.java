@@ -1,4 +1,4 @@
-package com.rabbitmq.consumer;
+package com.rabbitmq.consumer.reveiver;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -17,7 +17,7 @@ import java.util.Map;
 public class DirectReceiver {
 
     @RabbitHandler
-    public void process(Map message) {
+    public void process(Map<String, Object> message) {
         System.out.println("DirectReceiver收到消费的消息：" + message.toString());
     }
 }
