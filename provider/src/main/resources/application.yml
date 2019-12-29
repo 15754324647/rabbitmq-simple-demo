@@ -4,12 +4,24 @@ spring:
   #项目名字
   application:
     name: rabbirmq-provider
+    #配置rabbitmq服务器
   rabbitmq:
     host: 127.0.0.1
     port: 5672
     username: admin
     password: admin
+    #虚拟host 可以不设置，使用server默认host"/"
     virtual-host: /vhost_admin
 logging:
   level:
     root: debug
+
+    #消息确认配置项
+
+    #确认消息已发送到交换机Exchange
+    publisher-confirms:true
+
+    #确认消息已发送到队列Queue
+    publisher-returns:true
+
+
