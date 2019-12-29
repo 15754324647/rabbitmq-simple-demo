@@ -1,4 +1,4 @@
-package com.rabbitmq.consumer.reveiver;
+package com.rabbitmq.consumer.receiver;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -7,18 +7,17 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 /**
- * 主题交换机-监听的队列名称topic.woman
- *
- * @author graciano
- */
+ * @author limeiqi
+ * @date 2019/12/29
+ **/
 @Component
-@RabbitListener(queues = "topic.woman")
-public class TopicTotalReceiver {
+@RabbitListener(queues = "fanout.C")
+public class FanoutCReceiver {
+
 
     @RabbitHandler
     public void process(Map<String, Object> map) {
-        System.out.println("topic total 监听到消息：" + map.toString());
+        System.out.println("扇形交换机绑定的队列：fanout.C---" + map.toString());
     }
-
 
 }
